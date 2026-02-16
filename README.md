@@ -43,19 +43,16 @@ No installation needed. Add this to your MCP client config:
 ### Option 3: Claude Code (CLI)
 
 ```bash
-claude mcp add crosspost -- npx -y crosspost-mcp
-```
-
-Then set the env var in your shell:
-
-```bash
-export CROSSPOST_API_KEY="your-api-key-here"
+claude mcp add -s user crosspost \
+  -e CROSSPOST_API_KEY=your-api-key-here \
+  -e CROSSPOST_API_URL=https://crosspost-app.vercel.app \
+  -- npx -y crosspost-mcp
 ```
 
 ### Option 4: Manual (clone and build)
 
 ```bash
-git clone https://github.com/jennyouyang/crosspost-mcp.git
+git clone https://github.com/jenny-ouyang/crosspost-mcp.git
 cd crosspost-mcp
 npm install && npm run build
 ```

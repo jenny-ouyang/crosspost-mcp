@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment files
+.env
+.env.local
+
+# IDE
+.cursor/
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+
+# mcpb build outputs
+*.mcpb

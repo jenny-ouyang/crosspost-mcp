@@ -1,0 +1,26 @@
+# The mcpb only needs: manifest.json, dist/bundle.js, package.json, README.md
+# Everything else is excluded.
+
+# Source files
+src/
+tsconfig.json
+
+# Environment / secrets
+.env
+.env.example
+
+# All node_modules (bundle.js is self-contained)
+node_modules/
+
+# Lock file
+package-lock.json
+
+# Build artifacts we don't need in mcpb
+dist/index.js
+dist/index.d.ts
+
+# Git
+.git
+
+# Old mcpb builds
+*.mcpb

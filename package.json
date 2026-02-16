@@ -1,0 +1,51 @@
+{
+  "name": "crosspost-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for CrossPost — cross-post to X, Bluesky, LinkedIn, and Threads from Claude, Cursor, or any MCP client",
+  "type": "module",
+  "bin": {
+    "crosspost-mcp": "dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:bundle": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/bundle.js --target=node18",
+    "dev": "tsx src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "social-media",
+    "crosspost",
+    "cross-posting",
+    "claude",
+    "cursor",
+    "bluesky",
+    "twitter",
+    "linkedin",
+    "threads"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennyouyang/crosspost-mcp.git"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.27.3",
+    "tsx": "^4.0.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

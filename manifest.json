@@ -1,0 +1,76 @@
+{
+  "manifest_version": "0.3",
+  "name": "crosspost-mcp",
+  "display_name": "CrossPost",
+  "version": "0.1.0",
+  "description": "Cross-post to X, Bluesky, LinkedIn, and Threads from Claude. Write once, publish everywhere.",
+  "long_description": "CrossPost lets you publish and schedule social media posts across multiple platforms directly from Claude. Connect your accounts on the CrossPost dashboard, then use natural language to create posts, check their status, and manage your publishing schedule — all without leaving your AI assistant.",
+  "author": {
+    "name": "Jenny Ouyang"
+  },
+  "license": "MIT",
+  "keywords": ["social-media", "cross-posting", "twitter", "bluesky", "linkedin", "threads"],
+  "server": {
+    "type": "node",
+    "entry_point": "dist/bundle.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/bundle.js"],
+      "env": {
+        "CROSSPOST_API_KEY": "${user_config.api_key}",
+        "CROSSPOST_API_URL": "${user_config.api_url}"
+      }
+    }
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "CrossPost API Key",
+      "description": "Your API key from the CrossPost dashboard (Settings → API Keys)",
+      "sensitive": true,
+      "required": true
+    },
+    "api_url": {
+      "type": "string",
+      "title": "CrossPost API URL",
+      "description": "The CrossPost server URL (leave default unless self-hosting)",
+      "required": false,
+      "default": "https://crosspost-app.vercel.app"
+    }
+  },
+  "tools": [
+    {
+      "name": "list_accounts",
+      "description": "List all connected social media accounts and their status"
+    },
+    {
+      "name": "create_post",
+      "description": "Create and publish or schedule a post across social media platforms"
+    },
+    {
+      "name": "list_posts",
+      "description": "List recent posts with their status across all platforms"
+    },
+    {
+      "name": "get_post",
+      "description": "Get detailed status of a specific post"
+    },
+    {
+      "name": "cancel_post",
+      "description": "Cancel all pending or scheduled variants of a post"
+    },
+    {
+      "name": "reschedule_post",
+      "description": "Move a scheduled post to a new time"
+    },
+    {
+      "name": "list_scheduled",
+      "description": "Show all upcoming scheduled posts"
+    }
+  ],
+  "compatibility": {
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

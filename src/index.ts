@@ -49,7 +49,7 @@ async function apiRequest(
 
 const server = new McpServer({
   name: "crosspost-mcp",
-  version: "0.1.0",
+  version: "0.2.0",
 });
 
 // ─── Tool: list_accounts ──────────────────────────────────────────
@@ -106,6 +106,10 @@ server.tool(
         z.object({
           platform: z.enum(["x", "bluesky", "linkedin", "threads", "instagram"]),
           text: z.string().describe("The platform-specific post text"),
+          mediaUrls: z
+            .array(z.string())
+            .optional()
+            .describe("Optional array of public image URLs to attach to this variant"),
         })
       )
       .min(1)

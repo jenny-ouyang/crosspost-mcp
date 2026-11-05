@@ -1,6 +1,6 @@
 # CrossPost MCP Server
 
-Cross-post to **X**, **Bluesky**, **LinkedIn**, **Threads**, and **Instagram** from Claude, Cursor, or any MCP-compatible AI assistant. Write once, publish everywhere.
+Cross-post to **X**, **Bluesky**, **LinkedIn**, **Threads**, and **Instagram** (Threads and Instagram: see [Supported Platforms](#supported-platforms)) from Claude, Cursor, or any MCP-compatible AI assistant. Write once, publish everywhere.
 
 ## Prerequisites
 
@@ -92,8 +92,8 @@ Then point your MCP client to the built file:
 | X | Connect your own X account on the dashboard. |
 | Bluesky | Connect with your handle and an app password. |
 | LinkedIn | |
-| Threads | |
-| Instagram | Needs a professional (Business or Creator) account. Every Instagram post needs at least one image: pass public image URLs in `mediaUrls`. |
+| Threads | The Meta app is still in development mode, so today only accounts added as testers in the Meta dashboard can connect. Open to everyone after Meta App Review. |
+| Instagram | The Meta app is still in development mode, so today only accounts added as testers in the Meta dashboard can connect. Open to everyone after Meta App Review. Needs a professional (Business or Creator) account. Every Instagram post needs at least one image: pass public image URLs in `mediaUrls`. Image posts need crosspost-mcp 0.2.0 or later (npm still serves 0.1.0 until the next release). The hosted MCP endpoint cannot send images yet (crosspost-app issue #2). |
 
 ## Usage Examples
 

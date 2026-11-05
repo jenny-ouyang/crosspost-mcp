@@ -4,7 +4,7 @@ Cross-post to **X**, **Bluesky**, **LinkedIn**, and **Threads** from Claude, Cur
 
 ## Prerequisites
 
-1. Create a free account at [crosspost-app.vercel.app](https://crosspost-app.vercel.app)
+1. Create a free account at [postingly.io](https://postingly.io)
 2. Connect your social media accounts on the dashboard
 3. Generate an API key from **Settings → API Keys**
 
@@ -45,7 +45,7 @@ No installation needed. Add this to your MCP client config:
 ```bash
 claude mcp add -s user crosspost \
   -e CROSSPOST_API_KEY=your-api-key-here \
-  -e CROSSPOST_API_URL=https://crosspost-app.vercel.app \
+  -e CROSSPOST_API_URL=https://postingly.io \
   -- npx -y crosspost-mcp
 ```
 

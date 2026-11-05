@@ -7,7 +7,7 @@ import { z } from "zod";
 // ─── Configuration ────────────────────────────────────────────────
 
 const API_KEY = process.env.CROSSPOST_API_KEY;
-const API_URL = process.env.CROSSPOST_API_URL || "https://crosspost-app.vercel.app";
+const API_URL = process.env.CROSSPOST_API_URL || "https://postingly.io";
 
 if (!API_KEY) {
   console.error("Error: CROSSPOST_API_KEY environment variable is required.");
@@ -108,8 +108,8 @@ server.tool(
           text: z.string().describe("The platform-specific post text"),
           mediaUrls: z
             .array(z.string())
-            .optional()
-            .describe("Optional array of public image URLs to attach to this variant"),
+            .default([])
+            .describe("Public image URLs to attach to this variant. Pass empty array for text-only posts."),
         })
       )
       .min(1)

@@ -1,10 +1,10 @@
 # CrossPost MCP Server
 
-Cross-post to **X**, **Bluesky**, **LinkedIn**, and **Threads** from Claude, Cursor, or any MCP-compatible AI assistant. Write once, publish everywhere.
+Cross-post to **X**, **Bluesky**, **LinkedIn**, **Threads**, and **Instagram** (Threads and Instagram: see [Supported Platforms](#supported-platforms)) from Claude, Cursor, or any MCP-compatible AI assistant. Write once, publish everywhere.
 
 ## Prerequisites
 
-1. Create a free account at [crosspost-app.vercel.app](https://crosspost-app.vercel.app)
+1. Create a free account at [postingly.io](https://postingly.io)
 2. Connect your social media accounts on the dashboard
 3. Generate an API key from **Settings → API Keys**
 
@@ -12,7 +12,7 @@ Cross-post to **X**, **Bluesky**, **LinkedIn**, and **Threads** from Claude, Cur
 
 ### Option 1: Claude Desktop (one-click)
 
-Download `crosspost-mcp.mcpb` from the [releases page](https://github.com/jennyouyang/crosspost-mcp/releases) and double-click it. Claude Desktop will prompt you for your API key — paste it in and you're done.
+Download [`crosspost-mcp.mcpb`](https://postingly.io/downloads/crosspost-mcp.mcpb) and double-click it. Claude Desktop will prompt you for your API key — paste it in and you're done.
 
 ### Option 2: npx (works everywhere)
 
@@ -45,7 +45,7 @@ No installation needed. Add this to your MCP client config:
 ```bash
 claude mcp add -s user crosspost \
   -e CROSSPOST_API_KEY=your-api-key-here \
-  -e CROSSPOST_API_URL=https://crosspost-app.vercel.app \
+  -e CROSSPOST_API_URL=https://postingly.io \
   -- npx -y crosspost-mcp
 ```
 
@@ -85,6 +85,16 @@ Then point your MCP client to the built file:
 | `reschedule_post` | Change the time of a scheduled post |
 | `list_scheduled` | View all upcoming scheduled posts |
 
+## Supported Platforms
+
+| Platform | Notes |
+|---|---|
+| X | Connect your own X account on the dashboard. |
+| Bluesky | Connect with your handle and an app password. |
+| LinkedIn | |
+| Threads | The Meta app is still in development mode, so today only accounts added as testers in the Meta dashboard can connect. Open to everyone after Meta App Review. |
+| Instagram | The Meta app is still in development mode, so today only accounts added as testers in the Meta dashboard can connect. Open to everyone after Meta App Review. Needs a professional (Business or Creator) account. Every Instagram post needs at least one image: pass public image URLs in `mediaUrls`. Image posts need crosspost-mcp 0.2.0 or later (npm still serves 0.1.0 until the next release). The hosted MCP endpoint cannot send images yet. |
+
 ## Usage Examples
 
 Once installed, just talk to Claude naturally:
@@ -92,6 +102,7 @@ Once installed, just talk to Claude naturally:
 - "Post 'Hello world!' to all my platforms"
 - "Post this to Bluesky and Threads: Just shipped a new feature!"
 - "Schedule a post for tomorrow at 9am: Big announcement coming soon"
+- "Post this photo to Instagram with the caption 'New launch': https://example.com/photo.jpg"
 - "Show me my recent posts"
 - "What accounts do I have connected?"
 
@@ -100,7 +111,7 @@ Once installed, just talk to Claude naturally:
 | Variable | Required | Description |
 |---|---|---|
 | `CROSSPOST_API_KEY` | Yes | Your API key from the CrossPost dashboard |
-| `CROSSPOST_API_URL` | No | API URL (defaults to production). Only change if self-hosting. |
+| `CROSSPOST_API_URL` | No | API URL (defaults to `https://postingly.io`). Only change if self-hosting. |
 
 ## License
 

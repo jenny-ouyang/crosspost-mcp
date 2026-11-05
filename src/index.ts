@@ -7,7 +7,7 @@ import { z } from "zod";
 // ─── Configuration ────────────────────────────────────────────────
 
 const API_KEY = process.env.CROSSPOST_API_KEY;
-const API_URL = process.env.CROSSPOST_API_URL || "https://crosspost-app.vercel.app";
+const API_URL = process.env.CROSSPOST_API_URL || "https://postingly.io";
 
 if (!API_KEY) {
   console.error("Error: CROSSPOST_API_KEY environment variable is required.");

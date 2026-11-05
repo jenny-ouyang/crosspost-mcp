@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jennyouyang/crosspost-mcp.git"
+    "url": "git+https://github.com/jenny-ouyang/crosspost-mcp.git"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.26.0",

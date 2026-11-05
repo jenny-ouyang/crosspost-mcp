@@ -35,7 +35,7 @@
       "title": "CrossPost API URL",
       "description": "The CrossPost server URL (leave default unless self-hosting)",
       "required": false,
-      "default": "https://crosspost-app.vercel.app"
+      "default": "https://postingly.io"
     }
   },
   "tools": [

@@ -1,5 +1,14 @@
 # CrossPost MCP Server
 
+> [!WARNING]
+> **This npm package is deprecated and no longer maintained.** Use the hosted PostingLy connector instead. It needs no install and no API key.
+>
+> 1. In Claude, add a custom connector with the URL `https://postingly.io/api/mcp`.
+> 2. Click **Connect**.
+> 3. Sign in to PostingLy and click **Allow**.
+>
+> The `npx crosspost-mcp` server, the `.mcpb` bundle and the `CROSSPOST_API_KEY` setup below are kept for reference only.
+
 Cross-post to **X**, **Bluesky**, **LinkedIn**, **Threads**, and **Instagram** (Threads and Instagram: see [Supported Platforms](#supported-platforms)) from Claude, Cursor, or any MCP-compatible AI assistant. Write once, publish everywhere.
 
 ## Prerequisites
